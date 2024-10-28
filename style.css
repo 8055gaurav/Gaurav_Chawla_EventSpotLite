@@ -1,0 +1,281 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #112523;
+	font-family: 'Russo One', sans-serif;
+}
+
+nav {
+    width: 100%;
+    padding: 10px 0;
+    background-image: url(img/header-background.png);
+    background-size: 100% 70px;
+    padding: 0 0 0 40px;
+    height: 70px;
+}
+
+nav .menu {
+	max-width: 1200px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+}
+
+.menu .logo img {
+	width: 200px;
+}
+
+.menu ul li {
+	list-style: none;
+}
+
+.menu ul li a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 500;
+	padding: 8px 15px;
+	border-radius: 50px;
+	transition: all 0.3s ease;
+}
+
+.menu ul li a:hover {
+	color: #3fc0ac;
+}
+
+.NavBtns button {
+    position: relative;
+	align-items: center;
+    background: #3fc0ac;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    display: inline-flex;
+    max-width: 250px;
+    justify-content: center;
+    padding: 0 10px 0 10px;
+    text-transform: uppercase;
+    height: 40px;
+    -webkit-transition: background-color .1s ease .3s;
+    -o-transition: background-color .1s ease .3s;
+    transition: background-color .1s ease .3s;
+    font-size: 16px;
+    font-weight: bold;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.NavBtns button:before {
+	content: "";
+    display: block;
+	background: url(img/left-arrow.png) 0 0 no-repeat,url(img/right-arrow.png) right 0 top 0 no-repeat;
+    background-size: 20px 40px;
+    z-index: -1;
+	width: calc(100% + 38px);
+    height: 40px;
+	position: absolute;
+}
+
+.NavBtns button span {
+	align-items: center;
+    display: inline-flex;
+    flex-direction: row;
+    flex: 1;
+    text-align: center;
+    padding: 0;
+    position: relative;
+    height: 40px;
+    z-index: 1;
+}
+
+#check {
+    display: none;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: normal;
+    cursor: pointer;
+    display: none;
+}
+
+.menu ul li {
+    list-style: none;
+}
+
+.gallery {
+	width: 100%;
+	position: relative;
+	min-height: 31.25rem;
+	height: 100vh;
+}
+
+.gallery .content {
+	position: absolute;
+	z-index: 50;
+	left: 4rem;
+	top: 50%;
+	transform: translatey(-50%);
+	text-transform: uppercase;
+	color: #fff;
+	letter-spacing: 0.175rem;
+}
+
+.gallery .content img {
+    width: 100%;
+}
+
+.gallery-slider {
+	width: 100%;
+	height: 100%;
+}
+
+.gallery-slider .swiper-slide {
+	width: auto;
+	height: 100%;
+}
+
+.gallery-slider .swiper-slide::after {
+	position: absolute;
+	content: "";
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: rgb(15 121 109 / 12%);
+}
+
+.gallery-slider .swiper-slide img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	pointer-events: none;
+}
+
+.gallery .swiper-pagination {
+	position: relative;
+	bottom: -0.313rem;
+	text-align: left;
+}
+
+.gallery .swiper-pagination-bullet {
+	border-radius: 0;
+	width: 1.125rem;
+	height: 0.25rem;
+	background: #fff;
+	opacity: 1;
+}
+
+.gallery .swiper-pagination-bullet-active {
+	background: #3fc0ac;
+}
+
+.gallery-thumbs {
+	width: 14.375rem;
+	padding: 0;
+	overflow: hidden;
+	position: absolute;
+	bottom: 8rem;
+	right: 0;
+}
+
+.gallery-thumbs .swiper-slide {
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	overflow: hidden;
+	border-radius: 10px;
+    border: 5px solid #fff;
+    cursor: pointer;
+}
+.gallery-thumbs .swiper-slide-active {
+	border-color: #3fc0ac;
+}
+.gallery-thumbs .swiper-slide img {
+	width: auto;
+	height: 100%;
+}
+
+.mobbtn {
+	display: none;
+}
+
+/** Media Queries **/
+@media (min-width: 600px) {
+	.gallery-thumbs {
+		width: 25rem;
+	}
+}
+
+@media (max-width: 992px) {
+	.content {
+		top: 30%;
+		transform: translatey(-30%);
+		width: 80%;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+	}
+}
+
+@media (min-width: 1200px) {
+	.menu ul {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 1200px) {
+	.checkbtn {
+		display: block;
+	}
+	ul {
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background: #2c3e50;
+		top: 0;
+		left: -100%;
+		text-align: center;
+		transition: all .5s;
+	}
+	.menu ul li {
+		margin-left: 7px;
+		text-align: left;
+		padding-left: 60px;
+	}
+	li .mobbtn {
+		padding: 0 15px;
+		display: block;
+	}
+	.NavBtns {
+		display: none;
+	}
+	#check:checked ~ ul {
+		left: -50px;
+	}
+	.menu ul {
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background: #2c3e50;
+		top: 0;
+		left: -100%;
+		text-align: center;
+		transition: all .5s;
+		z-index: 999;
+	}
+	nav ul li {
+		display: block;
+		margin: 20px 0;
+	}
+}
